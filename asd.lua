@@ -854,20 +854,6 @@ local function auto1v1()
 
         crash("1v1")
         debugLog("Crashed player! killing them for that win", "auto1v1")
-
-        repeat task.wait() LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.WinnerTP.CFrame
-        until not workspace:FindFirstChild("Message")
-
-        workspace.Living.ChildAdded:Connect(function(player)
-            if player ~= LocalPlayer.Name then
-                task.wait(5)
-                killNPC(player.Name, 25)
-                LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.WinnerTP.CFrame
-            end
-        end)
-
-        killNPC(Opponent.Name, 25)
-        LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.WinnerTP.CFrameho 
     end
 end
 
